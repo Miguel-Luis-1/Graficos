@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 data = load_breast_cancer()
 df = pd.DataFrame(data.data, columns=data.feature_names)
 x = data.data
-data['class'] = df
+
 
 # Calcula a matriz de correlação
 print(df.corr())
@@ -38,4 +38,12 @@ sns.violinplot(df.corr())
 plt.show()
 
 # Scatterplot agrupando pelas classes
+dt = load_breast_cancer()
+dataset = pd.DataFrame(data=dt.data, columns=dt.feature_names)
+dataset['class'] = dt.target
 
+# Gráfico de dispersão agrupando pelas classes
+graphic = sns.PairGrid(dataset, hue = 'class')
+graphic.map_offdiag(sns.scatterplot)
+graphic.add_legend()
+plt.show()
