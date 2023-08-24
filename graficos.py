@@ -72,7 +72,7 @@ while True:
         break
     else:
         print("Digite um número valido!!")
-
+        continue
 
 
 
