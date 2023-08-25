@@ -52,7 +52,7 @@ while True:
 
     elif(opcao == 4):
         # ViolinPlot de todas as features
-        sns.violinplot(df.corr())
+        sns.violinplot(df)
         plt.show()
         continue
 
